@@ -1,0 +1,16 @@
+version: '3.1'
+
+services:
+  db_mysql:
+    platform: linux/amd64
+    image: mysql:8.3
+    ports:
+      - "127.0.0.1:3306:3306"
+    restart: always
+    environment:
+      MYSQL_DATABASE: jdbc
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+      MYSQL_ROOT_PASSWORD: admin
+    volumes:
+      - /var/lib/mysqld:/var/lib/mysql
